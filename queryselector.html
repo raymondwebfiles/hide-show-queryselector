@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query Selector</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .grandparent{
+            margin: auto;
+            height: 50vh;
+            width: 50vh;
+            background-color: grey;
+        }
+            .parent{
+                display: flex;
+                position: relative;
+                top: 4vh;
+                margin: 2vh auto;
+                height: 20vh;
+                width: 40vh;
+                background-color: cyan;
+            }   
+                .child{
+                    margin: auto;
+                    height: 8vh;
+                    width: 8vh;
+                    background-color: white; 
+                }
+    </style>
+</head>
+<body>
+    <div class="grandparent">
+        <div class="parent">
+            <div class="child"></div>
+            <div class="child"></div>
+        </div>
+        <div class="parent">
+            <div class="child"></div>
+            <div class="child"></div>
+        </div>
+    </div>
+    <script>
+        const grandparent =document.querySelector('.grandparent')
+//        const parent = document.querySelectorAll('.parent')
+        const parent = Array.from(document.querySelectorAll(".parent"))
+
+        
+//        color(parent)
+        parent.forEach(color)
+
+        function color(arg){
+            arg.style.backgroundColor = "wheat"
+        }
+    </script>
+</body>
+</html>
